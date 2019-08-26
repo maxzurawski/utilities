@@ -17,7 +17,7 @@ func GetIP(ignoreLoopback bool) (string, error) {
 			continue
 		}
 
-		// lookback - do not use
+		// loopback - do not use
 		if ignoreLoopback && iface.Flags&net.FlagLoopback != 0 {
 			continue
 		}
