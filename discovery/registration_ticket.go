@@ -3,8 +3,9 @@ package discovery
 import (
 	"bytes"
 	"fmt"
-	"github.com/xdevices/utilities/net"
 	"strings"
+
+	"github.com/xdevices/utilities/net"
 )
 
 const (

@@ -2,13 +2,13 @@ package config
 
 import (
 	"fmt"
-	"github.com/xdevices/utilities/discovery"
-	"github.com/xdevices/utilities/net"
 	"os"
 	"strconv"
 
-	"github.com/labstack/gommon/log"
+	"github.com/xdevices/utilities/discovery"
+	"github.com/xdevices/utilities/net"
 
+	"github.com/labstack/gommon/log"
 )
 
 type Manager struct {
@@ -67,8 +67,8 @@ func (c *Manager) Init() {
 	if serviceDuration, err := os.LookupEnv("SERVICE_DURATION_IN_SECONDS"); !err {
 		c.serviceDurationInSeconds = 5
 	} else {
-		if port, e := strconv.Atoi(serviceDuration); e != nil {
-			c.serviceDurationInSeconds = port
+		if servDuration, e := strconv.Atoi(serviceDuration); e != nil {
+			c.serviceDurationInSeconds = servDuration
 		}
 	}
 
@@ -87,6 +87,7 @@ func (c *Manager) HttpPort() int {
 }
 
 func (c *Manager) Address() string {
+	// NOTE: 192.168.1.48:8001
 	return fmt.Sprintf("%s:%d", c.address, c.httpPort)
 }
 
