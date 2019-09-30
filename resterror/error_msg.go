@@ -1,10 +1,9 @@
 package resterror
 
 type ErrorMsg struct {
-	Msg    string
-	Detail string
+	Msg string
 }
 
 func New(msg string) *ErrorMsg {
-	return &ErrorMsg{Msg: msg, Detail: ""}
+	return &ErrorMsg{Msg: msg}
 }
