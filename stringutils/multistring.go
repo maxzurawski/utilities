@@ -42,7 +42,7 @@ func (c MultiString) MarshalJSON() (out []byte, err error) {
 	err = nil
 
 	if value == "true" || value == "false" {
-		out = []byte(strings.ReplaceAll(value, "\"", "`"))
+		out = []byte(strings.Replace(value, "\"", "`", -1))
 		return
 	}
 	return json.Marshal(value)
