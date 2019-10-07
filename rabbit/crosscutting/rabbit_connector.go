@@ -15,8 +15,8 @@ func InitConnector(connection *amqp.Connection) *RabbitConnector {
 	return rabbitConnector
 }
 
-func (rc *RabbitConnector) Reset() {
-	_ = rc.Channel.Close()
-	rc.initChannel()
-	rc.DeclareQueue()
+func (r *RabbitConnector) Reset() {
+	_ = r.Channel.Close()
+	r.initChannel()
+	r.DeclareQueue()
 }
