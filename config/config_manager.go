@@ -20,6 +20,10 @@ type Manager struct {
 	registrationTicket       *discovery.RegistrationTicket
 	serviceDurationInSeconds int
 	ignoreLoopback           bool
+	connectToRabbit          bool
+	rabbitLoginPassword      string // guest:guest
+	rabbitHost               string // localhost
+	rabbitPort               string // 5672
 }
 
 func (c *Manager) Init() {
@@ -78,6 +82,35 @@ func (c *Manager) Init() {
 		c.eurekaService = eurekaHost
 	}
 
+	if connectToRabbit, err := os.LookupEnv("CONNECT_TO_RABBIT"); !err {
+		value, err := strconv.ParseBool(connectToRabbit)
+		if err != nil {
+			log.Warn("could not parse [::connectToRabbit:] to bool")
+			value = true
+		}
+		c.connectToRabbit = value
+	} else {
+		c.connectToRabbit = true
+	}
+
+	if rabbitLoginPassword, err := os.LookupEnv("RABBIT_LOGIN_PASSWORD"); !err {
+		c.rabbitLoginPassword = "guest1:guest1"
+	} else {
+		c.rabbitLoginPassword = rabbitLoginPassword
+	}
+
+	if rabbitHost, err := os.LookupEnv("RABBIT_HOST"); !err {
+		c.rabbitHost = "localhost"
+	} else {
+		c.rabbitHost = rabbitHost
+	}
+
+	if rabbitPort, err := os.LookupEnv("RABBIT_PORT"); !err {
+		c.rabbitPort = "5672"
+	} else {
+		c.rabbitPort = rabbitPort
+	}
+
 	registrationTicket := discovery.BuildRegistrationTicket(c.serviceName, c.httpPort, c.serviceDurationInSeconds, c.ignoreLoopback)
 	c.registrationTicket = registrationTicket
 }
@@ -109,4 +142,12 @@ func (c *Manager) RegistrationTicket() *discovery.RegistrationTicket {
 
 func (c *Manager) IgnoreLoopback() bool {
 	return c.ignoreLoopback
+}
+
+func (c *Manager) RabbitURL() string {
+	return fmt.Sprintf("amqp://%s@%s:%s", c.rabbitLoginPassword, c.rabbitHost, c.rabbitPort)
+}
+
+func (c *Manager) ConnectToRabbit() bool {
+	return c.connectToRabbit
 }
