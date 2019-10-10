@@ -5,6 +5,7 @@ import "github.com/streadway/amqp"
 type RabbitConnector struct {
 	Conn    *amqp.Connection
 	Channel *amqp.Channel
+	Queue   *amqp.Queue
 }
 
 func InitConnector(connection *amqp.Connection) *RabbitConnector {
@@ -18,5 +19,9 @@ func InitConnector(connection *amqp.Connection) *RabbitConnector {
 func (r *RabbitConnector) Reset() {
 	_ = r.Channel.Close()
 	r.initChannel()
-	r.DeclareQueue()
+	if r.Queue == nil {
+		queue := r.DeclareQueue()
+		r.Queue = &queue
+	}
+
 }
