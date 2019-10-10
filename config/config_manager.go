@@ -83,14 +83,15 @@ func (c *Manager) Init() {
 	}
 
 	if connectToRabbit, err := os.LookupEnv("CONNECT_TO_RABBIT"); !err {
+		log.Warn("using default setting")
+		c.connectToRabbit = true
+	} else {
 		value, err := strconv.ParseBool(connectToRabbit)
 		if err != nil {
 			log.Warn("could not parse [::connectToRabbit:] to bool")
 			value = true
 		}
 		c.connectToRabbit = value
-	} else {
-		c.connectToRabbit = true
 	}
 
 	if rabbitLoginPassword, err := os.LookupEnv("RABBIT_LOGIN_PASSWORD"); !err {
