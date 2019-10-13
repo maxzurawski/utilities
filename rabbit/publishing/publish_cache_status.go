@@ -38,5 +38,5 @@ func (d *Publisher) PublishCacheUpdateStatus(
 		string(bytes),
 	)
 
-	d.PublishInfo(msg.ProcessId, "", msg.Service, string(bytes))
+	d.PublishExtInfo(msg)
 }

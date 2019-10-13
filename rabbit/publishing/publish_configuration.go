@@ -38,5 +38,5 @@ func (d *Publisher) PublishConfigurationChanged(
 		routingKey,
 		string(bytes))
 
-	d.PublishInfo(msg.ProcessId, "", msg.Service, string(bytes))
+	d.PublishExtInfo(msg)
 }
