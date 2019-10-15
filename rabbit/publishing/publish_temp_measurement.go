@@ -37,5 +37,6 @@ func (d *Publisher) PublishTemperatureMeasurement(
 		routingKey,
 		string(bytes))
 
+	d.Reset()
 	d.PublishExtInfo(msg)
 }
