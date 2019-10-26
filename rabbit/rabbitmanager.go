@@ -1,9 +1,9 @@
 package rabbit
 
 import (
+	"github.com/maxzurawski/utilities/rabbit/observer"
+	"github.com/maxzurawski/utilities/rabbit/publishing"
 	"github.com/streadway/amqp"
-	"github.com/xdevices/utilities/rabbit/observer"
-	"github.com/xdevices/utilities/rabbit/publishing"
 )
 
 type RabbitMQManager struct {

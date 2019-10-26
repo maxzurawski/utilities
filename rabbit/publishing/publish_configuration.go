@@ -6,8 +6,8 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/labstack/gommon/log"
-	"github.com/xdevices/utilities/rabbit/crosscutting"
-	"github.com/xdevices/utilities/rabbit/domain"
+	"github.com/maxzurawski/utilities/rabbit/crosscutting"
+	"github.com/maxzurawski/utilities/rabbit/domain"
 )
 
 func (d *Publisher) PublishConfigurationChanged(

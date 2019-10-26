@@ -1,8 +1,8 @@
 package publishing
 
 import (
+	"github.com/maxzurawski/utilities/rabbit/crosscutting"
 	"github.com/streadway/amqp"
-	"github.com/xdevices/utilities/rabbit/crosscutting"
 )
 
 type Publisher struct {

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 
 	"github.com/labstack/gommon/log"
-	"github.com/xdevices/utilities/rabbit/crosscutting"
+	"github.com/maxzurawski/utilities/rabbit/crosscutting"
 )
 
 func (d *Publisher) publishExtLogMsg(
