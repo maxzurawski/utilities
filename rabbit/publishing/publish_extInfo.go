@@ -1,7 +1,7 @@
 package publishing
 
 import (
-	"../crosscutting"
+	"github.com/xdevices/utilities/rabbit/crosscutting"
 )
 
 func (d *Publisher) PublishExtInfo(

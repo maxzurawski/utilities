@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"../discovery"
-	"../net"
+	"github.com/xdevices/utilities/discovery"
+	"github.com/xdevices/utilities/net"
 
 	"github.com/labstack/gommon/log"
 )

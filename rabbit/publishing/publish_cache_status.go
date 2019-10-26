@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"time"
 
-	"../crosscutting"
-	"../domain"
 	"github.com/labstack/gommon/log"
+	"github.com/xdevices/utilities/rabbit/crosscutting"
+	"github.com/xdevices/utilities/rabbit/domain"
 )
 
 func (d *Publisher) PublishCacheUpdateStatus(

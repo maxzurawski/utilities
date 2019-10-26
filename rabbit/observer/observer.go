@@ -1,8 +1,8 @@
 package observer
 
 import (
-	"../crosscutting"
 	"github.com/streadway/amqp"
+	"github.com/xdevices/utilities/rabbit/crosscutting"
 )
 
 type Observer struct {
