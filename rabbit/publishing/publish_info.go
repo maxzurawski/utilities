@@ -3,8 +3,8 @@ package publishing
 import (
 	"time"
 
-	"github.com/xdevices/utilities/rabbit/crosscutting"
-	"github.com/xdevices/utilities/rabbit/domain"
+	"../crosscutting"
+	"../domain"
 )
 
 func (d *Publisher) PublishInfo(

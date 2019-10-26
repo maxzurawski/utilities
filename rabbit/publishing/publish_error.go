@@ -3,9 +3,9 @@ package publishing
 import (
 	"time"
 
+	"../crosscutting"
+	"../domain"
 	"github.com/google/uuid"
-	"github.com/xdevices/utilities/rabbit/crosscutting"
-	"github.com/xdevices/utilities/rabbit/domain"
 )
 
 func (d *Publisher) PublishError(

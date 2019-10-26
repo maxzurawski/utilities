@@ -3,7 +3,7 @@ package domain
 import (
 	"time"
 
-	"github.com/xdevices/utilities/stringutils"
+	"../../stringutils"
 )
 
 type NotifierMsg struct {

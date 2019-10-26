@@ -3,8 +3,8 @@ package publishing
 import (
 	"encoding/json"
 
+	"../crosscutting"
 	"github.com/labstack/gommon/log"
-	"github.com/xdevices/utilities/rabbit/crosscutting"
 )
 
 func (d *Publisher) publishExtLogMsg(

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/xdevices/utilities/net"
+	"../net"
 )
 
 const (
