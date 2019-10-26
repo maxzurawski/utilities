@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"time"
 
+	"../crosscutting"
+	"../domain"
 	"github.com/google/uuid"
 	"github.com/labstack/gommon/log"
-	"github.com/maxzurawski/utilities/rabbit/crosscutting"
-	"github.com/maxzurawski/utilities/rabbit/domain"
 )
 
 func (d *Publisher) PublishTemperatureMeasurement(

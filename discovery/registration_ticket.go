@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/maxzurawski/utilities/net"
+	"../net"
 )
 
 const (

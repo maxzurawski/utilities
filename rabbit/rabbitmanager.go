@@ -1,8 +1,8 @@
 package rabbit
 
 import (
-	"github.com/maxzurawski/utilities/rabbit/observer"
-	"github.com/maxzurawski/utilities/rabbit/publishing"
+	"../rabbit/observer"
+	"../rabbit/publishing"
 	"github.com/streadway/amqp"
 )
 

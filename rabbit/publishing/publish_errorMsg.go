@@ -3,9 +3,9 @@ package publishing
 import (
 	"encoding/json"
 
+	"../crosscutting"
+	"../domain"
 	"github.com/labstack/gommon/log"
-	"github.com/maxzurawski/utilities/rabbit/crosscutting"
-	"github.com/maxzurawski/utilities/rabbit/domain"
 )
 
 func (d *Publisher) publishErrorMsg(

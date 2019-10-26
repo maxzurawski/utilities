@@ -1,7 +1,7 @@
 package observer
 
 import (
-	"github.com/maxzurawski/utilities/rabbit/crosscutting"
+	"../crosscutting"
 	"github.com/streadway/amqp"
 )
 
