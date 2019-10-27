@@ -17,3 +17,11 @@ func (c Topics) String() string {
 		"xdevices.notifier",              // TopicNotifier
 	}[c]
 }
+
+func GetAllTopics() []string {
+	return []string{
+		TopicConfigurationChanged.String(),
+		TopicMeasurements.String(),
+		TopicLogs.String(),
+		TopicNotifier.String()}
+}

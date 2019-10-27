@@ -29,3 +29,16 @@ func (r RoutingKeys) String() string {
 		"temperature.min", // RoutingKeyNotifierTemperatureMin
 	}[r]
 }
+
+func GetAllRoutingKeys() []string {
+	return []string{
+		RoutingKeySensorTypes.String(),
+		RoutingKeySensors.String(),
+		RoutingKeyTemperatureMeasurement.String(),
+		RoutingKeyLogsSeverityInfo.String(),
+		RoutingKeyLogsSeverityWarn.String(),
+		RoutingKeyLogsSeverityErrors.String(),
+		RoutingKeyNotifierTemperatureMax.String(),
+		RoutingKeyNotifierTemperatureMin.String(),
+	}
+}
