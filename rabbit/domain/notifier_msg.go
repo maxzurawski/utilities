@@ -14,5 +14,6 @@ type NotifierMsg struct {
 	Min         string                  `json:"min"`
 	Value       stringutils.MultiString `json:"value"`
 	LogMsg      string                  `json:"logMsg"`
+	Transition  NotifierTransitions     `json:"transition"`
 	PublishedOn time.Time               `json:"publishedOn"`
 }
