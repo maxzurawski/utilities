@@ -28,3 +28,11 @@ func NotifierTransitionFromName(name string) (NotifierTransitions, error) {
 		return -1, errors.New("cannot recognize NotifierTransition")
 	}
 }
+
+func GetAllTransitions() []string {
+	return []string{
+		FirstTransition.String(),
+		ContinuousTransition.String(),
+		FinalTransition.String(),
+	}
+}
