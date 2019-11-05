@@ -9,4 +9,5 @@ type BasicManager interface {
 	ServiceName() string
 	RegistrationTicket() *discovery.RegistrationTicket
 	EurekaService() string
+	Address() string
 }
